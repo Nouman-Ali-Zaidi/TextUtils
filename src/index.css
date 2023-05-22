@@ -1,0 +1,9 @@
+.color-buttons {
+    display: flex;
+}
+
+.color-buttons>li {
+    list-style-type: circle;
+    color: red;
+    size: 5px;
+}
