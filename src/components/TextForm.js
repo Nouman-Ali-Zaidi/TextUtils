@@ -21,19 +21,19 @@ const TextForm = ({ heading, text, setText, handleUpClick, handleLowClick, handl
                     </textarea>
                 </div>
                 <button
-                    className="btn btn-primary"
+                    className="btn btn-primary mx-1 my-1"
                     onClick={handleUpClick}
                 >
                     Convert to UpperCase
                 </button>
                 <button
-                    className="btn btn-primary mx-1"
+                    className="btn btn-primary mx-1 my-1"
                     onClick={handleLowClick}
                 >
                     Convert to LowerCase
                 </button>
                 <button
-                    className="btn btn-primary my-1"
+                    className="btn btn-primary my-1 my-1"
                     onClick={handleSpaceClick}
                 >
                     Remove extra spaces from text
@@ -41,7 +41,7 @@ const TextForm = ({ heading, text, setText, handleUpClick, handleLowClick, handl
             </div>
             <div className={`container text-${mode === "light" ? "dark" : "light"}`}>
                 <h2>Your text summary</h2>
-                <p>{text.split(" ").length} words and {text.length} characters.</p>
+                <p>{text.split(" ").filter((element) => element.length !== 0).length} words and {text.length} characters.</p>
                 <p>{0.008 * text.split(" ").length} Minutes needed to read this text.</p>
                 <h2>Preview</h2>
                 <p>{text}</p>
