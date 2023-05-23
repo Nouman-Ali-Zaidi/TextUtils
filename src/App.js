@@ -37,18 +37,21 @@ function App() {
     setText(text.trim().split(/ +/).join(' '));
     showAlert("All extra spaces has been removed", "success");
   }
+  const handleClearTextClick = () => {
+    setText('');
+  }
 
   const toggleMode = () => {
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#042743";
       showAlert("Dark Mode has been enabled", "success");
-      document.title = "TextUtils - Dark Mode";
+      // document.title = "TextUtils - Dark Mode";
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light mode has been enabled", "success");
-      document.title = "Text Utils - Light Mode";
+      // document.title = "Text Utils - Light Mode";
     }
   }
 
@@ -74,12 +77,15 @@ function App() {
               handleUpClick={handleUpClick}
               handleLowClick={handleLowClick}
               handleSpaceClick={handleSpaceClick}
+              handleClearTextClick={handleClearTextClick}
             />
           }>
 
           </Route>
           <Route exact path="/about" element={
-            <About />
+            <About
+              mode={mode}
+            />
           } />
         </Routes>
       </Router>
