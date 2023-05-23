@@ -2,13 +2,13 @@ import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import { useState } from 'react';
-// import About from './components/About';
+import About from './components/About';
 import Alert from './components/Alert';
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route
-// } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom';
 
 function App() {
   const [text, setText] = useState("");
@@ -54,35 +54,35 @@ function App() {
 
   return (
     <>
-      {/* <Router> */}
-      <Navbar
-        title="TextUtils"
-        mode={mode}
-        toggleMode={toggleMode}
-      />
-      <Alert
-        alert={alert}
-      />
+      <Router>
+        <Navbar
+          title="TextUtils"
+          mode={mode}
+          toggleMode={toggleMode}
+        />
+        <Alert
+          alert={alert}
+        />
 
-      {/* <Routes>
-          <Route exact path='/' element={ */}
-      <TextForm
-        heading="Enter the text to analyze below."
-        text={text}
-        mode={mode}
-        setText={setText}
-        handleUpClick={handleUpClick}
-        handleLowClick={handleLowClick}
-        handleSpaceClick={handleSpaceClick}
-      />
-      {/* }>
+        <Routes>
+          <Route exact path='/' element={
+            <TextForm
+              heading="Enter the text to analyze below."
+              text={text}
+              mode={mode}
+              setText={setText}
+              handleUpClick={handleUpClick}
+              handleLowClick={handleLowClick}
+              handleSpaceClick={handleSpaceClick}
+            />
+          }>
 
           </Route>
           <Route exact path="/about" element={
             <About />
           } />
         </Routes>
-      </Router> */}
+      </Router>
 
 
     </>
